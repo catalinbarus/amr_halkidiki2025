@@ -1,3 +1,26 @@
 <div class="d-flex justify-content-center align-items-center vh-100 background">
-  <h1 class="display-2 text-light black-rectangle">🇬🇷 AMR {{calculateDaysToJuly10()}} zile</h1>
+  <div class="text-center black-rectangle">
+    <h1 class="display-4 mb-4">🇬🇷AMR</h1>
+    <div class="d-flex justify-content-center">
+      <div class="px-3 text-center">
+        <h1 class="display-2">{{ countdown.days }}</h1>
+        <p>zile</p>
+      </div>
+      <span class="separator">:</span>
+      <div class="px-3 text-center">
+        <h1 class="display-2">{{ countdown.hours }}</h1>
+        <p>ore</p>
+      </div>
+      <span class="separator">:</span>
+      <div class="px-3 text-center">
+        <h1 class="display-2">{{ countdown.minutes }}</h1>
+        <p>minute</p>
+      </div>
+      <span class="separator">:</span>
+      <div class="px-3 text-center">
+        <h1 class="display-2">{{ countdown.seconds }}</h1>
+        <p>secunde</p>
+      </div>
+    </div>
+  </div>
 </div>
