@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.flashing-text {
+  animation: flash 0.5s infinite; /* 1s duration, infinite repetition */
+}
+
+.background {
+  background-image: url('assets/siviri.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  height: 100vh !important;
+}
+
+.black-rectangle {
+  background-color: black; /* Black background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 5px; /* Optional: adds rounded corners */
+}
+
