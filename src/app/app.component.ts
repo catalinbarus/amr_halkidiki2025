@@ -16,7 +16,7 @@ export class AppComponent {
       ? today.getFullYear() + 1 // Next year's July 10 if today is past July 10
       : today.getFullYear();
 
-    const targetDate = new Date(year, 6, 10); // July 10th (Month is 0-based)
+    const targetDate = new Date(year, 6, 9); // July 9th (Month is 0-based)
     const diffInTime = targetDate.getTime() - today.getTime();
     const diffInDays = Math.ceil(diffInTime / (1000 * 60 * 60 * 24)); // Convert milliseconds to days
 
