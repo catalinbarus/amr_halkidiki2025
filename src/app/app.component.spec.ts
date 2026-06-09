@@ -20,10 +20,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('amr_halkidiki2025');
   });
 
-  it('should render title', () => {
+  it('should render the AMR heading', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('amr_halkidiki2025 app is running!');
+    expect(compiled.querySelector('h1')?.textContent).toContain('AMR');
   });
 });

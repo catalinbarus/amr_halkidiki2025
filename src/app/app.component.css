@@ -1,0 +1,114 @@
+.amr-page {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.amr-position {
+  max-width: calc(100vw - 24px);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: left 160ms ease, top 160ms ease;
+}
+
+.amr-position h1 {
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.edit-position-button,
+.position-editor button {
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.edit-position-button {
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  position: fixed;
+  right: 16px;
+  top: 16px;
+  z-index: 10;
+  padding: 10px 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.position-editor {
+  background: rgba(17, 17, 17, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  color: #fff;
+  position: fixed;
+  right: 16px;
+  top: 64px;
+  z-index: 10;
+  width: min(280px, calc(100vw - 32px));
+  padding: 14px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32);
+}
+
+.editor-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.close-button {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  height: 32px;
+  width: 32px;
+}
+
+.preset-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.preset-grid button {
+  aspect-ratio: 1;
+  background: rgba(255, 255, 255, 0.82);
+  position: relative;
+}
+
+.preset-grid button::after {
+  background: #111;
+  border-radius: 50%;
+  content: '';
+  height: 10px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+}
+
+.nudge-controls {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.nudge-controls button {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  min-height: 38px;
+}
+
+.nudge-controls button:nth-child(3) {
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  .amr-position h1 {
+    font-size: 2.25rem;
+  }
+}

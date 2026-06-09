@@ -1,3 +1,40 @@
-<div class="d-flex justify-content-center align-items-center vh-100 background">
-  <h1 class="display-2 text-light black-rectangle">🇬🇷 AMR {{calculateDaysToJuly10()}} zile</h1>
+<div class="amr-page background">
+  <button
+    type="button"
+    class="edit-position-button"
+    (click)="togglePositionEditor()"
+    [attr.aria-expanded]="isPositionEditorOpen"
+    aria-controls="amr-position-editor"
+  >
+    Edit position
+  </button>
+
+  <div class="amr-position" [ngStyle]="amrPositionStyle">
+    <h1 class="display-2 text-light black-rectangle">🇬🇷 AMR {{calculateDaysToJuly10()}} zile</h1>
+  </div>
+
+  <div *ngIf="isPositionEditorOpen" id="amr-position-editor" class="position-editor">
+    <div class="editor-header">
+      <strong>AMR position</strong>
+      <button type="button" class="close-button" (click)="togglePositionEditor()" aria-label="Close position editor">×</button>
+    </div>
+
+    <div class="preset-grid" aria-label="Position presets">
+      <button
+        type="button"
+        *ngFor="let preset of positionPresets"
+        (click)="setAmrPosition(preset.value)"
+        [attr.aria-label]="preset.label"
+        [title]="preset.label"
+      ></button>
+    </div>
+
+    <div class="nudge-controls" aria-label="Fine tune AMR position">
+      <button type="button" (click)="moveAmrPosition(0, -4)" aria-label="Move up">↑</button>
+      <button type="button" (click)="moveAmrPosition(-4, 0)" aria-label="Move left">←</button>
+      <button type="button" (click)="resetAmrPosition()">Reset</button>
+      <button type="button" (click)="moveAmrPosition(4, 0)" aria-label="Move right">→</button>
+      <button type="button" (click)="moveAmrPosition(0, 4)" aria-label="Move down">↓</button>
+    </div>
+  </div>
 </div>
