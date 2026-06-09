@@ -7,12 +7,14 @@
 .amr-position {
   max-width: calc(100vw - 24px);
   position: absolute;
-  transform: translate(-50%, -50%);
-  transition: left 160ms ease, top 160ms ease;
+  width: max-content;
+  transition: left 160ms ease, top 160ms ease, transform 160ms ease;
 }
 
 .amr-position h1 {
+  box-sizing: border-box;
   margin: 0;
+  max-width: 100%;
   text-align: center;
   white-space: nowrap;
 }

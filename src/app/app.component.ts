@@ -82,7 +82,8 @@ export class AppComponent {
   get amrPositionStyle(): Record<string, string> {
     return {
       left: `${this.amrPosition.x}%`,
-      top: `${this.amrPosition.y}%`
+      top: `${this.amrPosition.y}%`,
+      transform: `translate(${this.getAxisOffset(this.amrPosition.x)}, ${this.getAxisOffset(this.amrPosition.y)})`
     };
   }
 
@@ -120,6 +121,18 @@ export class AppComponent {
     }
 
     return Math.min(92, Math.max(8, value));
+  }
+
+  private getAxisOffset(value: number): string {
+    if (value <= 25) {
+      return '0';
+    }
+
+    if (value >= 75) {
+      return '-100%';
+    }
+
+    return '-50%';
   }
 
 }
